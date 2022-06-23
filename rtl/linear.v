@@ -1,3 +1,33 @@
+`timescale 1ns / 1ps
+////////////////////////////////////////////////////////////////////////////////
+// Company: Miet
+// Engineer: Kostya
+// 
+// Create Date: 19.06.2022 13:07:40
+// Design Name: Grasspopper
+// Module Name: linear
+// Project Name: Grasspopper
+// Target Devices: any
+// Tool Versions: 2021.1
+// Description:
+//   sync module
+//   module implements linear action in one stage for grasspopper encoding
+//
+// Parameters:
+//   rst            - reset signal
+//   clk            - clock signal
+//   data_i - 255 bit (16 bytes) data to be encoded
+//   data_o - 255 bit (16 bytes) encoded data
+//
+// Dependencies: None
+// 
+// Revision: v0.1
+//   v0.1 - file Created
+//
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+
 
 module linear();
 

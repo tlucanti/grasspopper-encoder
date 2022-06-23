@@ -1,3 +1,34 @@
+`timescale 1ns / 1ps
+////////////////////////////////////////////////////////////////////////////////
+// Company: Miet
+// Engineer: Kostya
+// 
+// Create Date: 19.06.2022 13:19:27
+// Design Name: Grasspopper
+// Module Name: key_xor
+// Project Name: Grasspopper
+// Target Devices: any
+// Tool Versions: 2021.1
+// Description:
+//   sync module
+//   module implements xor encoding action in one stage for grasspopper encoding
+//
+// Parameters:
+//   rst            - reset signal
+//   clk            - clock signal
+//   stage_num_i    - 4 bit number of current stage
+//   data_i - 255 bit (16 bytes) data to be encoded
+//   data_o - 255 bit (16 bytes) encoded data
+//
+// Dependencies: None
+// 
+// Revision: v0.1
+//   v0.1 - file Created
+//
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+
 
 module key_xor();
 

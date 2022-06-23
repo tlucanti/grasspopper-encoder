@@ -1,3 +1,27 @@
+`timescale 1ns / 1ps
+////////////////////////////////////////////////////////////////////////////////
+// Company: Miet
+// Engineer: Kostya
+// 
+// Create Date: 19.06.2022 13:19:27
+// Design Name: Grasspopper
+// Project Name: Grasspopper
+// Target Devices: any
+// Tool Versions: 2021.1
+// Description:
+//   header file with lookup tables
+//
+// Dependencies: None
+// 
+// Revision: v1.0
+//   v0.1 - file Created
+//   v1.0 - sbox and galois lookups done
+//
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+
 // -----------------------------------------------------------------------------
 function automatic [7:0] sbox_lookup;
 /*
