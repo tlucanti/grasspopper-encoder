@@ -38,7 +38,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-module grasspopper();
+module grasspopper(clk, reset, data_i, data_o, busy);
 
 input               clk;
 /*
@@ -55,12 +55,12 @@ input       [255:0]  data_i;
 
 */
 
-output reg  [255:0]  data_o;
+output      [255:0]  data_o;
 /*
 
 */
 
-output reg  busy;
+output busy;
 /*
 
 */
@@ -78,88 +78,95 @@ reg         [255:0]  round_8_data;
 
 */
 
+wire        [8:0]  stage_busy;
+
 stage stage_0 (
-    .clk            (clk         ),
-    .rst            (rst         ),
-    .stage_num_i    (4'h0        ),
-    .data_i         (data_i      ),
-    .data_o         (round_0_data),
+    .clk            (clk          ),
+    .rst            (rst          ),
+    .stage_num_i    (4'h0         ),
+    .data_i         (data_i       ),
+    .data_o         (round_0_data ),
+    .busy           (stage_busy[0])
 );
 
 stage stage_1 (
-    .clk            (clk         ),
-    .rst            (rst         ),
-    .stage_num_i    (4'h1        ),
-    .data_i         (data_i      ),
-    .data_o         (round_1_data),
+    .clk            (clk          ),
+    .rst            (rst          ),
+    .stage_num_i    (4'h1         ),
+    .data_i         (data_i       ),
+    .data_o         (round_1_data ),
+    .busy           (stage_busy[1])
 );
 
 stage stage_2 (
-    .clk            (clk         ),
-    .rst            (rst         ),
-    .stage_num_i    (4'h2        ),
-    .data_i         (data_i      ),
-    .data_o         (round_2_data),
+    .clk            (clk          ),
+    .rst            (rst          ),
+    .stage_num_i    (4'h2         ),
+    .data_i         (data_i       ),
+    .data_o         (round_2_data ),
+    .busy           (stage_busy[2])
 );
 
 stage stage_3 (
-    .clk            (clk         ),
-    .rst            (rst         ),
-    .stage_num_i    (4'h3        ),
-    .data_i         (data_i      ),
-    .data_o         (round_3_data),
+    .clk            (clk          ),
+    .rst            (rst          ),
+    .stage_num_i    (4'h3         ),
+    .data_i         (data_i       ),
+    .data_o         (round_3_data ),
+    .busy           (stage_busy[3])
 );
 
 stage stage_4 (
-    .clk            (clk         ),
-    .rst            (rst         ),
-    .stage_num_i    (4'h4        ),
-    .data_i         (data_i      ),
-    .data_o         (round_4_data),
+    .clk            (clk          ),
+    .rst            (rst          ),
+    .stage_num_i    (4'h4         ),
+    .data_i         (data_i       ),
+    .data_o         (round_4_data ),
+    .busy           (stage_busy[4])
 );
 
 stage stage_5 (
-    .clk            (clk         ),
-    .rst            (rst         ),
-    .stage_num_i    (4'h5        ),
-    .data_i         (data_i      ),
-    .data_o         (round_5_data),
+    .clk            (clk          ),
+    .rst            (rst          ),
+    .stage_num_i    (4'h5         ),
+    .data_i         (data_i       ),
+    .data_o         (round_5_data ),
+    .busy           (stage_busy[5])
 );
 
 stage stage_6 (
-    .clk            (clk         ),
-    .rst            (rst         ),
-    .stage_num_i    (4'h6        ),
-    .data_i         (data_i      ),
-    .data_o         (round_6_data),
+    .clk            (clk          ),
+    .rst            (rst          ),
+    .stage_num_i    (4'h6         ),
+    .data_i         (data_i       ),
+    .data_o         (round_6_data ),
+    .busy           (stage_busy[6])
 );
 
 stage stage_7 (
-    .clk            (clk         ),
-    .rst            (rst         ),
-    .stage_num_i    (4'h7        ),
-    .data_i         (data_i      ),
-    .data_o         (round_7_data),
+    .clk            (clk          ),
+    .rst            (rst          ),
+    .stage_num_i    (4'h7         ),
+    .data_i         (data_i       ),
+    .data_o         (round_7_data ),
+    .busy           (stage_busy[7])
 );
 
 stage stage_8 (
-    .clk            (clk         ),
-    .rst            (rst         ),
-    .stage_num_i    (4'h8        ),
-    .data_i         (data_i      ),
-    .data_o         (round_8_data),
+    .clk            (clk          ),
+    .rst            (rst          ),
+    .stage_num_i    (4'h8         ),
+    .data_i         (data_i       ),
+    .data_o         (round_8_data ),
+    .busy           (stage_busy[8])
 );
 
 key_xor stage_9 (
-    .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num      (4'h9         ),
-    .data_i         (data_i       ),
+    .data_i         (round_8_data ),
     .data_o         (data_o       )
 );
 
-always @(posedge clk) begin
-    busy <= 1'd0;
-end
+assign busy = 1'h0;
 
 endmodule

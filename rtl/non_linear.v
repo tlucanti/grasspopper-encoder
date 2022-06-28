@@ -28,56 +28,41 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
+`include "lookups.v"
 
-module non_linear();
+module non_linear(data_i, data_o);
 
-input clk;
+input [255:0]   data_i;
 /*
 
 */
 
-input rst;
+output [255:0]  data_o;
 /*
 
 */
 
-input [255:0] data_i;
-/*
+wire [7:0] extra_byte;
 
-*/
+assign extra_byte =
+    galois_lookup_148(data_i[007:000]) ^
+    galois_lookup_032(data_i[015:008]) ^
+    galois_lookup_133(data_i[023:016]) ^
+    galois_lookup_016(data_i[031:024]) ^
+    galois_lookup_194(data_i[039:032]) ^
+    galois_lookup_192(data_i[047:040]) ^
+                      data_i[055:048]  ^
+    galois_lookup_251(data_i[063:056]) ^
+                      data_i[071:064]  ^
+    galois_lookup_192(data_i[079:072]) ^
+    galois_lookup_016(data_i[087:080]) ^
+    galois_lookup_194(data_i[095:088]) ^
+    galois_lookup_133(data_i[103:096]) ^
+    galois_lookup_032(data_i[111:104]) ^
+    galois_lookup_148(data_i[119:112]) ^
+                      data_i[127:120];
 
-output reg [255:0] data_o;
-/*
-
-*/
-
-reg [7:0] extra_byte;
-
-always @(posedge clk) begin
-	if (rst) begin
-
-	end else begin
-        extra_byte <=
-            galois_lookup_148(data_i[007:000]) ^
-            galois_lookup_032(data_i[015:008]) ^
-            galois_lookup_133(data_i[023:016]) ^
-            galois_lookup_016(data_i[031:024]) ^
-            galois_lookup_194(data_i[039:032]) ^
-            galois_lookup_192(data_i[047:040]) ^
-                              data_i[055:048]  ^
-            galois_lookup_251(data_i[063:056]) ^
-                              data_i[071:064]  ^
-            galois_lookup_192(data_i[079:072]) ^
-            galois_lookup_016(data_i[087:080]) ^
-            galois_lookup_194(data_i[095:088]) ^
-            galois_lookup_133(data_i[103:096]) ^
-            galois_lookup_032(data_i[111:104]) ^
-            galois_lookup_148(data_i[119:112]) ^
-                              data_i[127:120];
-
-        data_o <= {extra_byte, data_i[119:0]};
-	end
-end
+assign data_o = {extra_byte, data_i[119:0]};
 
 // -----------------------------------------------------------------------------
 function automatic [7:0] xor_reduce;
@@ -87,7 +72,7 @@ function automatic [7:0] xor_reduce;
     input   [255:0] data;
 
     begin
-        xor_reduce <=   data[015:008] ^ data[023:016] ^ data[031:024] ^
+        xor_reduce =    data[015:008] ^ data[023:016] ^ data[031:024] ^
                         data[039:032] ^ data[047:040] ^ data[055:048] ^
                         data[063:056] ^ data[071:064] ^ data[079:072] ^
                         data[087:080] ^ data[095:088] ^ data[103:096] ^

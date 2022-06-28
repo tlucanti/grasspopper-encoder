@@ -28,50 +28,49 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
+// `include "lookups.v"
 
-module linear();
+module linear(data_i, data_o);
 
-input clk;
+input   [255:0] data_i;
 /*
 
 */
 
-input rst;
+output  [255:0] data_o;
 /*
 
 */
 
-input [255:0] data_i;
+assign data_o[007:000] = sb_lookup(data_i[007:000]);
+assign data_o[015:008] = sb_lookup(data_i[015:008]);
+assign data_o[023:016] = sb_lookup(data_i[023:016]);
+assign data_o[031:024] = sb_lookup(data_i[031:024]);
+assign data_o[039:032] = sb_lookup(data_i[039:032]);
+assign data_o[047:040] = sb_lookup(data_i[047:040]);
+assign data_o[055:048] = sb_lookup(data_i[055:048]);
+assign data_o[063:056] = sb_lookup(data_i[063:056]);
+assign data_o[071:064] = sb_lookup(data_i[071:064]);
+assign data_o[079:072] = sb_lookup(data_i[079:072]);
+assign data_o[087:080] = sb_lookup(data_i[087:080]);
+assign data_o[095:088] = sb_lookup(data_i[095:088]);
+assign data_o[103:096] = sb_lookup(data_i[103:096]);
+assign data_o[111:104] = sb_lookup(data_i[111:104]);
+assign data_o[119:112] = sb_lookup(data_i[119:112]);
+assign data_o[127:120] = sb_lookup(data_i[127:120]);
+
+// -----------------------------------------------------------------------------
+function automatic [7:0] sb_lookup;
 /*
 
 */
+    input   [7:0]   bt;
 
-output reg [255:0] data_o;
-/*
-
-*/
-
-always @(posedge clk) begin
-	if (rst) begin
-
-	end else begin
-        data_o[007:000] <= sbox_lookup(data_i[007:000]);
-        data_o[015:008] <= sbox_lookup(data_i[015:008]);
-        data_o[023:016] <= sbox_lookup(data_i[023:016]);
-        data_o[031:024] <= sbox_lookup(data_i[031:024]);
-        data_o[039:032] <= sbox_lookup(data_i[039:032]);
-        data_o[047:040] <= sbox_lookup(data_i[047:040]);
-        data_o[055:048] <= sbox_lookup(data_i[055:048]);
-        data_o[063:056] <= sbox_lookup(data_i[063:056]);
-        data_o[071:064] <= sbox_lookup(data_i[071:064]);
-        data_o[079:072] <= sbox_lookup(data_i[079:072]);
-        data_o[087:080] <= sbox_lookup(data_i[087:080]);
-        data_o[095:088] <= sbox_lookup(data_i[095:088]);
-        data_o[103:096] <= sbox_lookup(data_i[103:096]);
-        data_o[111:104] <= sbox_lookup(data_i[111:104]);
-        data_o[119:112] <= sbox_lookup(data_i[119:112]);
-        data_o[127:120] <= sbox_lookup(data_i[127:120]);
-    end
-end
+    begin case (bt)
+        8'd000: sb_lookup = 8'hFC;
+        8'd001: sb_lookup = 8'hEE;
+        8'd002: sb_lookup = 8'hDD;
+    endcase end
+endfunction
 
 endmodule
