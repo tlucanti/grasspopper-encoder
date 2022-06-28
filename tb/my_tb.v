@@ -1,12 +1,12 @@
 
 module tb_gp();
 
-reg         clk;
-reg         reset;
-reg [255:0] data_i;
+reg             clk;
+reg             reset;
 
-wire    data_o;
-wire    busy;
+wire    [255:0] data_i = 256'h0x1122334455667700ffeeddccbbaa9988;
+wire    [255:0] data_o;
+wire            busy;
 
 grasspopper gr (
     .clk(clk),

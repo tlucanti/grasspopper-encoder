@@ -65,6 +65,16 @@ output busy;
 
 */
 
+wire        [255:0]  stage_01;
+wire        [255:0]  stage_12;
+wire        [255:0]  stage_23;
+wire        [255:0]  stage_34;
+wire        [255:0]  stage_45;
+wire        [255:0]  stage_56;
+wire        [255:0]  stage_67;
+wire        [255:0]  stage_78;
+wire        [255:0]  stage_89;
+
 reg         [255:0]  round_0_data;
 reg         [255:0]  round_1_data;
 reg         [255:0]  round_2_data;
@@ -85,7 +95,7 @@ stage stage_0 (
     .rst            (rst          ),
     .stage_num_i    (4'h0         ),
     .data_i         (data_i       ),
-    .data_o         (round_0_data ),
+    .data_o         (stage_01     ),
     .busy           (stage_busy[0])
 );
 
@@ -93,8 +103,8 @@ stage stage_1 (
     .clk            (clk          ),
     .rst            (rst          ),
     .stage_num_i    (4'h1         ),
-    .data_i         (data_i       ),
-    .data_o         (round_1_data ),
+    .data_i         (round_0_data ),
+    .data_o         (stage_12     ),
     .busy           (stage_busy[1])
 );
 
@@ -102,8 +112,8 @@ stage stage_2 (
     .clk            (clk          ),
     .rst            (rst          ),
     .stage_num_i    (4'h2         ),
-    .data_i         (data_i       ),
-    .data_o         (round_2_data ),
+    .data_i         (round_1_data ),
+    .data_o         (stage_23     ),
     .busy           (stage_busy[2])
 );
 
@@ -111,8 +121,8 @@ stage stage_3 (
     .clk            (clk          ),
     .rst            (rst          ),
     .stage_num_i    (4'h3         ),
-    .data_i         (data_i       ),
-    .data_o         (round_3_data ),
+    .data_i         (round_2_data ),
+    .data_o         (stage_34     ),
     .busy           (stage_busy[3])
 );
 
@@ -120,8 +130,8 @@ stage stage_4 (
     .clk            (clk          ),
     .rst            (rst          ),
     .stage_num_i    (4'h4         ),
-    .data_i         (data_i       ),
-    .data_o         (round_4_data ),
+    .data_i         (round_3_data ),
+    .data_o         (stage_45     ),
     .busy           (stage_busy[4])
 );
 
@@ -129,8 +139,8 @@ stage stage_5 (
     .clk            (clk          ),
     .rst            (rst          ),
     .stage_num_i    (4'h5         ),
-    .data_i         (data_i       ),
-    .data_o         (round_5_data ),
+    .data_i         (round_4_data ),
+    .data_o         (stage_56     ),
     .busy           (stage_busy[5])
 );
 
@@ -138,8 +148,8 @@ stage stage_6 (
     .clk            (clk          ),
     .rst            (rst          ),
     .stage_num_i    (4'h6         ),
-    .data_i         (data_i       ),
-    .data_o         (round_6_data ),
+    .data_i         (round_5_data ),
+    .data_o         (stage_67     ),
     .busy           (stage_busy[6])
 );
 
@@ -147,8 +157,8 @@ stage stage_7 (
     .clk            (clk          ),
     .rst            (rst          ),
     .stage_num_i    (4'h7         ),
-    .data_i         (data_i       ),
-    .data_o         (round_7_data ),
+    .data_i         (round_6_data ),
+    .data_o         (stage_78     ),
     .busy           (stage_busy[7])
 );
 
@@ -156,8 +166,8 @@ stage stage_8 (
     .clk            (clk          ),
     .rst            (rst          ),
     .stage_num_i    (4'h8         ),
-    .data_i         (data_i       ),
-    .data_o         (round_8_data ),
+    .data_i         (round_7_data ),
+    .data_o         (stage_89 ),
     .busy           (stage_busy[8])
 );
 
@@ -168,5 +178,29 @@ key_xor stage_9 (
 );
 
 assign busy = 1'h0;
+
+always @(posedge clk) begin
+    if (rst) begin
+        round_0_data <= 256'h0;
+        round_1_data <= 256'h0;
+        round_2_data <= 256'h0;
+        round_3_data <= 256'h0;
+        round_4_data <= 256'h0;
+        round_5_data <= 256'h0;
+        round_6_data <= 256'h0;
+        round_7_data <= 256'h0;
+        round_8_data <= 256'h0;
+    end else begin
+        round_0_data <= round_0_data;
+        round_1_data <= round_1_data;
+        round_2_data <= round_2_data;
+        round_3_data <= round_3_data;
+        round_4_data <= round_4_data;
+        round_5_data <= round_5_data;
+        round_6_data <= round_6_data;
+        round_7_data <= round_7_data;
+        round_8_data <= round_8_data;
+    end
+end
 
 endmodule
