@@ -41,5 +41,16 @@ def galois_application():
 	all_bytes = [f'data[{rng_fun(i)}]' for i in range(1, 16)] + ['data_extra']
 	print(f'data[{rng}] <= ' + ' ^ '.join(all_bytes))
 
+
+def wire_indexes():
+	rng_fun = lambda i: f'{i * 8 + 7:03}:{i * 8:03}'
+	for i in range(15, -1, -1):
+		print(rng_fun(i))
+
+
+def counter():
+	for i in range(256):
+		print(f"8'h{i:02X}")
+
 if __name__ == '__main__':
-	xor_lookup()
+	counter()

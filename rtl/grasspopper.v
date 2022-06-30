@@ -50,12 +50,12 @@ input               reset;
 
 */
 
-input       [255:0]  data_i;
+input       [127:0]  data_i;
 /*
 
 */
 
-output      [255:0]  data_o;
+output      [127:0]  data_o;
 /*
 
 */
@@ -65,25 +65,25 @@ output busy;
 
 */
 
-wire        [255:0]  stage_01;
-wire        [255:0]  stage_12;
-wire        [255:0]  stage_23;
-wire        [255:0]  stage_34;
-wire        [255:0]  stage_45;
-wire        [255:0]  stage_56;
-wire        [255:0]  stage_67;
-wire        [255:0]  stage_78;
-wire        [255:0]  stage_89;
+wire        [127:0]  stage_01;
+wire        [127:0]  stage_12;
+wire        [127:0]  stage_23;
+wire        [127:0]  stage_34;
+wire        [127:0]  stage_45;
+wire        [127:0]  stage_56;
+wire        [127:0]  stage_67;
+wire        [127:0]  stage_78;
+wire        [127:0]  stage_89;
 
-reg         [255:0]  round_0_data;
-reg         [255:0]  round_1_data;
-reg         [255:0]  round_2_data;
-reg         [255:0]  round_3_data;
-reg         [255:0]  round_4_data;
-reg         [255:0]  round_5_data;
-reg         [255:0]  round_6_data;
-reg         [255:0]  round_7_data;
-reg         [255:0]  round_8_data;
+reg         [127:0]  round_0_data;
+reg         [127:0]  round_1_data;
+reg         [127:0]  round_2_data;
+reg         [127:0]  round_3_data;
+reg         [127:0]  round_4_data;
+reg         [127:0]  round_5_data;
+reg         [127:0]  round_6_data;
+reg         [127:0]  round_7_data;
+reg         [127:0]  round_8_data;
 /*
 
 */
@@ -181,15 +181,15 @@ assign busy = 1'h0;
 
 always @(posedge clk) begin
     if (rst) begin
-        round_0_data <= 256'h0;
-        round_1_data <= 256'h0;
-        round_2_data <= 256'h0;
-        round_3_data <= 256'h0;
-        round_4_data <= 256'h0;
-        round_5_data <= 256'h0;
-        round_6_data <= 256'h0;
-        round_7_data <= 256'h0;
-        round_8_data <= 256'h0;
+        round_0_data <= 128'h0;
+        round_1_data <= 128'h0;
+        round_2_data <= 128'h0;
+        round_3_data <= 128'h0;
+        round_4_data <= 128'h0;
+        round_5_data <= 128'h0;
+        round_6_data <= 128'h0;
+        round_7_data <= 128'h0;
+        round_8_data <= 128'h0;
     end else begin
         round_0_data <= round_0_data;
         round_1_data <= round_1_data;

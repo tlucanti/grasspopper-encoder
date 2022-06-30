@@ -32,12 +32,12 @@
 
 module linear(data_i, data_o);
 
-input   [255:0] data_i;
+input   [127:0] data_i;
 /*
 
 */
 
-output  [255:0] data_o;
+output  [127:0] data_o;
 /*
 
 */

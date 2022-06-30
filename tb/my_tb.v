@@ -3,9 +3,9 @@ module tb_gp();
 
 reg             clk;
 reg             reset;
+reg     [127:0] data_i;
 
-wire    [255:0] data_i = 256'h0x1122334455667700ffeeddccbbaa9988;
-wire    [255:0] data_o;
+wire    [127:0] data_o;
 wire            busy;
 
 grasspopper gr (
@@ -20,13 +20,16 @@ always #5 clk = ~clk;
 
 initial begin
     clk = 0;
-    reset = 0;
-    @(negedge clk);
     reset = 1;
-    repeat(2) begin
-      @(negedge clk);
-    end
+    @(negedge clk);
     reset = 0;
+    #5
+    data_i <= 128'h1122334455667700ffeeddccbbaa9988;
+    #10;
+    data_i <= 128'h0;
+    reset = 0;
+    #5
+    data_i <= 128'h0;
     #2000;
     
     $finish();

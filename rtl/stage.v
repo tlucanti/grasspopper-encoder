@@ -53,12 +53,12 @@ input   [3:0]   stage_num_i;
 
 */
 
-input   [255:0] data_i;
+input   [127:0] data_i;
 /*
 
 */
 
-output  [255:0] data_o;
+output  [127:0] data_o;
 /*
 
 */
@@ -75,78 +75,78 @@ wire last_stage = stage_num_i == 10;
 */
 
 // ----------------------------------- XOR WIRES ------
-wire [255:0] xor_data_o;
+wire [127:0] xor_data_o;
 /*
 
 */
 
 // ----------------------------------- LINEAR WIRES
-wire [255:0] linear_data_i;
+wire [127:0] linear_data_i;
 /*
 
 */
 
-wire [255:0] linead_data_o;
+wire [127:0] linead_data_o;
 /*
 
 */
 
 // ----------------------------------- NON LINEAR WIRES
-wire [255:0] non_linear_data_i;
+wire [127:0] non_linear_data_i;
 /*
 
 */
 
 
 // ----------------------------------- REGISTERS -----
-reg  [255:0] xor_to_linear_buffer;
+reg  [127:0] xor_to_linear_buffer;
 /*
 
 */
 
-reg  [255:0] linear_to_non_linear_buffer;
+reg  [127:0] linear_to_non_linear_buffer;
 /*
 
 */
 
-wire [255:0] stage_xor_linear;
-wire [255:0] stage_nl_0;
-wire [255:0] stage_01;
-wire [255:0] stage_12;
-wire [255:0] stage_23;
-wire [255:0] stage_34;
-wire [255:0] stage_45;
-wire [255:0] stage_56;
-wire [255:0] stage_67;
-wire [255:0] stage_78;
-wire [255:0] stage_89;
-wire [255:0] stage_9A;
-wire [255:0] stage_AB;
-wire [255:0] stage_BC;
-wire [255:0] stage_CD;
-wire [255:0] stage_DE;
-wire [255:0] stage_EF;
+wire [127:0] stage_xor_linear;
+wire [127:0] stage_nl_0;
+wire [127:0] stage_01;
+wire [127:0] stage_12;
+wire [127:0] stage_23;
+wire [127:0] stage_34;
+wire [127:0] stage_45;
+wire [127:0] stage_56;
+wire [127:0] stage_67;
+wire [127:0] stage_78;
+wire [127:0] stage_89;
+wire [127:0] stage_9A;
+wire [127:0] stage_AB;
+wire [127:0] stage_BC;
+wire [127:0] stage_CD;
+wire [127:0] stage_DE;
+wire [127:0] stage_EF;
 /*
 
 */
 
-reg  [255:0] xor_buffer;
-reg  [255:0] linear_buffer;
-reg  [255:0] non_linear_buffer_0;
-reg  [255:0] non_linear_buffer_1;
-reg  [255:0] non_linear_buffer_2;
-reg  [255:0] non_linear_buffer_3;
-reg  [255:0] non_linear_buffer_4;
-reg  [255:0] non_linear_buffer_5;
-reg  [255:0] non_linear_buffer_6;
-reg  [255:0] non_linear_buffer_7;
-reg  [255:0] non_linear_buffer_8;
-reg  [255:0] non_linear_buffer_9;
-reg  [255:0] non_linear_buffer_A;
-reg  [255:0] non_linear_buffer_B;
-reg  [255:0] non_linear_buffer_C;
-reg  [255:0] non_linear_buffer_D;
-reg  [255:0] non_linear_buffer_E;
+reg  [127:0] xor_buffer;
+reg  [127:0] linear_buffer;
+reg  [127:0] non_linear_buffer_0;
+reg  [127:0] non_linear_buffer_1;
+reg  [127:0] non_linear_buffer_2;
+reg  [127:0] non_linear_buffer_3;
+reg  [127:0] non_linear_buffer_4;
+reg  [127:0] non_linear_buffer_5;
+reg  [127:0] non_linear_buffer_6;
+reg  [127:0] non_linear_buffer_7;
+reg  [127:0] non_linear_buffer_8;
+reg  [127:0] non_linear_buffer_9;
+reg  [127:0] non_linear_buffer_A;
+reg  [127:0] non_linear_buffer_B;
+reg  [127:0] non_linear_buffer_C;
+reg  [127:0] non_linear_buffer_D;
+reg  [127:0] non_linear_buffer_E;
 /*
 
 */
@@ -250,23 +250,23 @@ non_linear non_linear_F (
 
 always @(posedge clk) begin
     if (rst) begin
-        xor_buffer          <= 256'h0;
-        linear_buffer       <= 256'h0;
-        non_linear_buffer_0 <= 256'h0;
-        non_linear_buffer_1 <= 256'h0;
-        non_linear_buffer_2 <= 256'h0;
-        non_linear_buffer_3 <= 256'h0;
-        non_linear_buffer_4 <= 256'h0;
-        non_linear_buffer_5 <= 256'h0;
-        non_linear_buffer_6 <= 256'h0;
-        non_linear_buffer_7 <= 256'h0;
-        non_linear_buffer_8 <= 256'h0;
-        non_linear_buffer_9 <= 256'h0;
-        non_linear_buffer_A <= 256'h0;
-        non_linear_buffer_B <= 256'h0;
-        non_linear_buffer_C <= 256'h0;
-        non_linear_buffer_D <= 256'h0;
-        non_linear_buffer_E <= 256'h0;
+        xor_buffer          <= 128'h0;
+        linear_buffer       <= 128'h0;
+        non_linear_buffer_0 <= 128'h0;
+        non_linear_buffer_1 <= 128'h0;
+        non_linear_buffer_2 <= 128'h0;
+        non_linear_buffer_3 <= 128'h0;
+        non_linear_buffer_4 <= 128'h0;
+        non_linear_buffer_5 <= 128'h0;
+        non_linear_buffer_6 <= 128'h0;
+        non_linear_buffer_7 <= 128'h0;
+        non_linear_buffer_8 <= 128'h0;
+        non_linear_buffer_9 <= 128'h0;
+        non_linear_buffer_A <= 128'h0;
+        non_linear_buffer_B <= 128'h0;
+        non_linear_buffer_C <= 128'h0;
+        non_linear_buffer_D <= 128'h0;
+        non_linear_buffer_E <= 128'h0;
     end else begin
         xor_buffer          <= stage_xor_linear;
         linear_buffer       <= stage_nl_0;
