@@ -216,16 +216,19 @@ L = [148, 32, 133, 16, 194, 192, 1, 251,
 sorted_unique_L = sorted(list(set(L)))
 del sorted_unique_L[0]
 
+def Plist(lst):
+    return '[' + ' '.join(map(lambda x: f'{x:02x}', lst)) + ']'
+
 def k_round(value: int, key: int, iteration: int) -> int:
     xor_step = value ^ key
-    print(f'xor {iteration}: {list(xor_step.to_bytes(16, "big"))}')
+    print(f'xor    {iteration:02}: {Plist(list(xor_step.to_bytes(16, "big")))}')
     if iteration == 9:
         return xor_step
 
     xor_bytes_list = list(xor_step.to_bytes(16, "big"))
     for i, b in enumerate(xor_bytes_list):
         xor_bytes_list[i] = S[b]
-    print(f'lin {iteration}: {xor_bytes_list}')
+    print(f'lin    {iteration:02}: {Plist(xor_bytes_list)}')
 
     for stage in range(16):
         last_byte = 0
@@ -236,7 +239,7 @@ def k_round(value: int, key: int, iteration: int) -> int:
                 last_byte = last_byte ^ mul_tables[sorted_unique_L.index(L[i])][b]
         del xor_bytes_list[-1]
         xor_bytes_list.insert(0, last_byte)
-        print(f'gal {iteration}:{stage}: {xor_bytes_list}')
+        print(f'gal {iteration:02}:{stage:02}: {Plist(xor_bytes_list)}')
 
     print()
     return int.from_bytes(xor_bytes_list, "big")

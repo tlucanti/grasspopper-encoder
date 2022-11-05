@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Company: Miet
 // Engineer: Kostya
-// 
+//
 // Create Date: 19.06.2022 13:16:47
 // Design Name: Grasspopper
 // Module Name: stage
@@ -24,12 +24,12 @@
 //                      progress)
 //
 // Dependencies: None
-// 
+//
 // Revision: v0.1
 //   v0.1 - file Created
 //
 // Additional Comments:
-// 
+//
 ////////////////////////////////////////////////////////////////////////////////
 
 // `include "lookups.v"
@@ -249,43 +249,23 @@ non_linear non_linear_F (
 );
 
 always @(posedge clk) begin
-    if (rst) begin
-        xor_buffer          <= 128'h0;
-        linear_buffer       <= 128'h0;
-        non_linear_buffer_0 <= 128'h0;
-        non_linear_buffer_1 <= 128'h0;
-        non_linear_buffer_2 <= 128'h0;
-        non_linear_buffer_3 <= 128'h0;
-        non_linear_buffer_4 <= 128'h0;
-        non_linear_buffer_5 <= 128'h0;
-        non_linear_buffer_6 <= 128'h0;
-        non_linear_buffer_7 <= 128'h0;
-        non_linear_buffer_8 <= 128'h0;
-        non_linear_buffer_9 <= 128'h0;
-        non_linear_buffer_A <= 128'h0;
-        non_linear_buffer_B <= 128'h0;
-        non_linear_buffer_C <= 128'h0;
-        non_linear_buffer_D <= 128'h0;
-        non_linear_buffer_E <= 128'h0;
-    end else begin
-        xor_buffer          <= stage_xor_linear;
-        linear_buffer       <= stage_nl_0;
-        non_linear_buffer_0 <= stage_01;
-        non_linear_buffer_1 <= stage_12;
-        non_linear_buffer_2 <= stage_23;
-        non_linear_buffer_3 <= stage_34;
-        non_linear_buffer_4 <= stage_45;
-        non_linear_buffer_5 <= stage_56;
-        non_linear_buffer_6 <= stage_67;
-        non_linear_buffer_7 <= stage_78;
-        non_linear_buffer_8 <= stage_89;
-        non_linear_buffer_9 <= stage_9A;
-        non_linear_buffer_A <= stage_AB;
-        non_linear_buffer_B <= stage_BC;
-        non_linear_buffer_C <= stage_CD;
-        non_linear_buffer_D <= stage_DE;
-        non_linear_buffer_E <= stage_EF;
-    end
+    xor_buffer          <= stage_xor_linear;
+    linear_buffer       <= stage_nl_0;
+    non_linear_buffer_0 <= stage_01;
+    non_linear_buffer_1 <= stage_12;
+    non_linear_buffer_2 <= stage_23;
+    non_linear_buffer_3 <= stage_34;
+    non_linear_buffer_4 <= stage_45;
+    non_linear_buffer_5 <= stage_56;
+    non_linear_buffer_6 <= stage_67;
+    non_linear_buffer_7 <= stage_78;
+    non_linear_buffer_8 <= stage_89;
+    non_linear_buffer_9 <= stage_9A;
+    non_linear_buffer_A <= stage_AB;
+    non_linear_buffer_B <= stage_BC;
+    non_linear_buffer_C <= stage_CD;
+    non_linear_buffer_D <= stage_DE;
+    non_linear_buffer_E <= stage_EF;
 end
 
 endmodule

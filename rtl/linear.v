@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Company: Miet
 // Engineer: Kostya
-// 
+//
 // Create Date: 19.06.2022 13:07:40
 // Design Name: Grasspopper
 // Module Name: linear
@@ -20,12 +20,12 @@
 //   data_o - 255 bit (16 bytes) encoded data
 //
 // Dependencies: None
-// 
+//
 // Revision: v0.1
 //   v0.1 - file Created
 //
 // Additional Comments:
-// 
+//
 ////////////////////////////////////////////////////////////////////////////////
 
 // `include "lookups.v"

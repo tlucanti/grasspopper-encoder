@@ -62,11 +62,12 @@ def gp_encode(number):
         debug_print(f'sbox   {i:01}: {d}')
 
         for j in range(16):
-            print(f'gal {i:01}:{j:02}: {d}')
             d = galois_mul_fast(d)
+            print(f'gal {i:01}:{j:02}: {d}')
             # mul = galois_mul(d)
             # d = np.roll(d, 1)
             # d[0] = mul
         debug_print()
 
 print(f'{gp_encode(0x1122334455667700ffeeddccbbaa9988):x}')
+#print(f'{gp_encode(0x00112233445566778899AABBCCDDEEFF):x}')
