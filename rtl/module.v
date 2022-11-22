@@ -40,7 +40,8 @@ module grasspopper_module(
 reg [7:0]   mem[35:0];
 
 wire    resetn;
-wire    req_ack;
+wire    req;
+wire    ack;
 wire    busy;
 wire    valid;
 wire    [127:0] d_i;
@@ -50,8 +51,8 @@ grasspopper gp(
     .clk        (pclk_i),
     .rst        (~resetn),
     .data_i     (d_i),
-    .request_i  (req_ack),
-    .ack_i      (req_ack),
+    .request_i  (req),
+    .ack_i      (ack),
     .data_o     (d_o),
     .valid_o    (valid),
     .busy_o     (busy)
@@ -59,14 +60,10 @@ grasspopper gp(
 
 always @(posedge pclk_i) begin
     if (pwrite_i) begin
-        if (pstrb_i[0])
-            mem[paddr_i + 0] <= pwdata_i[0];
-        if (pstrb_i[1])
-            mem[paddr_i + 1] <= pwdata_i[1];
-        if (pstrb_i[2])
-            mem[paddr_i + 2] <= pwdata_i[2];
-        if (pstrb_i[3])
-            mem[paddr_i + 3] <= pwdata_i[3];
+        mem[paddr_i + 0] <= pstrb_i[0] ? pwdata_i[0] : mem[paddr_i + 0];
+        mem[paddr_i + 1] <= pstrb_i[1] ? pwdata_i[1] : mem[paddr_i + 1];
+        mem[paddr_i + 2] <= pstrb_i[2] ? pwdata_i[2] : mem[paddr_i + 2];
+        mem[paddr_i + 3] <= pstrb_i[3] ? pwdata_i[3] : mem[paddr_i + 3];
     end
 
     if (valid) begin
@@ -87,14 +84,16 @@ always @(posedge pclk_i) begin
         mem[20 + 14] <= d_o[14 * 8 +: 8];
         mem[20 + 15] <= d_o[15 * 8 +: 8];
     end
-    mem[3][0] <= busy;
+
+    mem[3] <= busy;
     mem[2] <= valid;
 end
 
 assign  pslverr_o = ((pwrite_i && (20 <= paddr_i)) || (paddr_i == 0 && pstrb_i[3:2]));
 assign  pready_o = penable_i;
 assign  resetn = mem[0] && presetn_i;
-assign  req_ack = mem[1][0];
+assign  ack = mem[1][1];
+assign  req = mem[1][0];
 assign  d_i = {
     mem[19], mem[18], mem[17], mem[16], mem[15], mem[14], mem[13], mem[12],
     mem[11], mem[10], mem[9], mem[8], mem[7], mem[6], mem[5], mem[4]
