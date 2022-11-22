@@ -41,7 +41,7 @@ module testbench();
         resetn <= 1'b0;
         ack <= 0;
         request <= 0;
-        repeat(2) begin
+        repeat(200) begin
             @(posedge clk);
         end
         resetn <= 1'b1;
