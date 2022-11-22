@@ -15,7 +15,6 @@
 //   Russian Federation 34.12-2015)
 //
 // Parameters:
-//   rst            - reset signal
 //   clk            - clock signal
 //   stage_num_i    - 4 bit number of current stage
 //   data_i         - 255 bit (16 bytes) data to be encoded
@@ -32,16 +31,11 @@
 
 // `include "lookups.v"
 
-module stage(clk, rst, stage_num_i, data_i, data_o);
+module stage(clk, stage_num_i, data_i, data_o);
 
 // -------------------------
 
 input           clk;
-/*
-
-*/
-
-input           rst;
 /*
 
 */
@@ -57,12 +51,6 @@ input   [127:0] data_i;
 */
 
 output  [127:0] data_o;
-/*
-
-*/
-
-// ----------------------------------- WIRES -----------------------------------
-wire last_stage = stage_num_i == 10;
 /*
 
 */

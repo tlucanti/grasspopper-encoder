@@ -108,7 +108,6 @@ reg         [STAGE_NUMBER - 1:0]  valid_bitmap;
 
 stage stage_0 (
     .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num_i    (4'h0         ),
     .data_i         (data_i       ),
     .data_o         (stage_01     )
@@ -116,7 +115,6 @@ stage stage_0 (
 
 stage stage_1 (
     .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num_i    (4'h1         ),
     .data_i         (round_0_data ),
     .data_o         (stage_12     )
@@ -124,7 +122,6 @@ stage stage_1 (
 
 stage stage_2 (
     .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num_i    (4'h2         ),
     .data_i         (round_1_data ),
     .data_o         (stage_23     )
@@ -132,7 +129,6 @@ stage stage_2 (
 
 stage stage_3 (
     .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num_i    (4'h3         ),
     .data_i         (round_2_data ),
     .data_o         (stage_34     )
@@ -140,7 +136,6 @@ stage stage_3 (
 
 stage stage_4 (
     .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num_i    (4'h4         ),
     .data_i         (round_3_data ),
     .data_o         (stage_45     )
@@ -148,7 +143,6 @@ stage stage_4 (
 
 stage stage_5 (
     .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num_i    (4'h5         ),
     .data_i         (round_4_data ),
     .data_o         (stage_56     )
@@ -156,7 +150,6 @@ stage stage_5 (
 
 stage stage_6 (
     .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num_i    (4'h6         ),
     .data_i         (round_5_data ),
     .data_o         (stage_67     )
@@ -164,7 +157,6 @@ stage stage_6 (
 
 stage stage_7 (
     .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num_i    (4'h7         ),
     .data_i         (round_6_data ),
     .data_o         (stage_78     )
@@ -172,7 +164,6 @@ stage stage_7 (
 
 stage stage_8 (
     .clk            (clk          ),
-    .rst            (rst          ),
     .stage_num_i    (4'h8         ),
     .data_i         (round_7_data ),
     .data_o         (stage_89     )

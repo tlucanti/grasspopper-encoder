@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module testbench();
 
     logic [127:0] data_to_cipher [11];
@@ -45,18 +46,22 @@ module testbench();
         end
         resetn <= 1'b1;
         for(i=0; i < 11; i++) begin
-            $display("Trying to cipher %d chunk of data", i);
+            $display("Trying to cipher %d block of data", i);
             @(posedge clk);
             data_i <= data_to_cipher[i];
             while(busy) begin
                 @(posedge clk);
             end
+            $display("Sent %d block to module", i);
             request <= 1'b1;
             @(posedge clk);
             request <= 1'b0;
+            $display("Waiting %d block to chiphered", i);
             while(~valid) begin
+                $display("%d ...", i);
                 @(posedge clk);
             end
+            $display("Block %d ready", i);
             ciphered_data[i] <= data_o;
             ack <= 1'b1;
             @(posedge clk);
