@@ -16,7 +16,7 @@
 //
 // Parameters:
 //   clk    - clock signal
-//   reset  - reset signal
+//   rst    - reset   signal
 //   data_i - 255 bit (16 bytes) data to be encoded
 //   data_o - 255 bit (16 bytes) encoded data
 //
@@ -38,31 +38,46 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-module grasspopper(clk, reset, data_i, data_o, busy);
+module grasspopper(clk, rst, data_i, request_i, ack_i, data_o, valid_o, busy_o);
 
 input               clk;
 /*
-
+    clock
 */
 
-input               reset;
+input               rst;
 /*
-
+    reset
 */
 
 input       [127:0]  data_i;
 /*
+    16 bytes of input data
+*/
 
+input               request_i;
+/*
+    request signal
+*/
+
+input               ack_i;
+/*
+    acknowledgement signal (ignored)
 */
 
 output      [127:0]  data_o;
 /*
-
+    16 bytes of chiphered data
 */
 
-output busy;
+output              busy_o;
 /*
+    busy sugnal
+*/
 
+output              valid_o;
+/*
+    valid data signal
 */
 
 wire        [127:0]  stage_01;
@@ -88,87 +103,79 @@ reg         [127:0]  round_8_data;
 
 */
 
-wire        [8:0]  stage_busy;
+localparam  STAGE_NUMBER = 162;
+reg         [STAGE_NUMBER - 1:0]  valid_bitmap;
 
 stage stage_0 (
     .clk            (clk          ),
-    .rst            (reset        ),
+    .rst            (rst          ),
     .stage_num_i    (4'h0         ),
     .data_i         (data_i       ),
-    .data_o         (stage_01     ),
-    .busy           (stage_busy[0])
+    .data_o         (stage_01     )
 );
 
 stage stage_1 (
     .clk            (clk          ),
-    .rst            (reset        ),
+    .rst            (rst          ),
     .stage_num_i    (4'h1         ),
     .data_i         (round_0_data ),
-    .data_o         (stage_12     ),
-    .busy           (stage_busy[1])
+    .data_o         (stage_12     )
 );
 
 stage stage_2 (
     .clk            (clk          ),
-    .rst            (reset        ),
+    .rst            (rst          ),
     .stage_num_i    (4'h2         ),
     .data_i         (round_1_data ),
-    .data_o         (stage_23     ),
-    .busy           (stage_busy[2])
+    .data_o         (stage_23     )
 );
 
 stage stage_3 (
     .clk            (clk          ),
-    .rst            (reset        ),
+    .rst            (rst          ),
     .stage_num_i    (4'h3         ),
     .data_i         (round_2_data ),
-    .data_o         (stage_34     ),
-    .busy           (stage_busy[3])
+    .data_o         (stage_34     )
 );
 
 stage stage_4 (
     .clk            (clk          ),
-    .rst            (reset        ),
+    .rst            (rst          ),
     .stage_num_i    (4'h4         ),
     .data_i         (round_3_data ),
-    .data_o         (stage_45     ),
-    .busy           (stage_busy[4])
+    .data_o         (stage_45     )
 );
 
 stage stage_5 (
     .clk            (clk          ),
-    .rst            (reset        ),
+    .rst            (rst          ),
     .stage_num_i    (4'h5         ),
     .data_i         (round_4_data ),
-    .data_o         (stage_56     ),
-    .busy           (stage_busy[5])
+    .data_o         (stage_56     )
 );
 
 stage stage_6 (
     .clk            (clk          ),
-    .rst            (reset        ),
+    .rst            (rst          ),
     .stage_num_i    (4'h6         ),
     .data_i         (round_5_data ),
-    .data_o         (stage_67     ),
-    .busy           (stage_busy[6])
+    .data_o         (stage_67     )
 );
 
 stage stage_7 (
     .clk            (clk          ),
-    .rst            (reset        ),
+    .rst            (rst          ),
     .stage_num_i    (4'h7         ),
     .data_i         (round_6_data ),
-    .data_o         (stage_78     ),
-    .busy           (stage_busy[7])
+    .data_o         (stage_78     )
 );
 
 stage stage_8 (
     .clk            (clk          ),
-    .rst            (reset        ),
+    .rst            (rst          ),
     .stage_num_i    (4'h8         ),
     .data_i         (round_7_data ),
-    .data_o         (stage_89 ),
-    .busy           (stage_busy[8])
+    .data_o         (stage_89     )
 );
 
 key_xor stage_9 (
@@ -177,9 +184,15 @@ key_xor stage_9 (
     .data_o         (data_o       )
 );
 
-assign busy = 1'h0;
+assign valid_o = valid_bitmap[0];
+assign busy_o = 1'b0;
 
 always @(posedge clk) begin
+    if (rst) begin
+        valid_bitmap <= 'b0;
+    end else begin
+        valid_bitmap <= {request_i, valid_bitmap[STAGE_NUMBER - 1:1]};
+    end
     round_0_data <= stage_01;
     round_1_data <= stage_12;
     round_2_data <= stage_23;

@@ -20,8 +20,6 @@
 //   stage_num_i    - 4 bit number of current stage
 //   data_i         - 255 bit (16 bytes) data to be encoded
 //   data_o         - 255 bit (16 bytes) encoded data
-//   bisy           - flag indicating that the module is busy (encoding in
-//                      progress)
 //
 // Dependencies: None
 //
@@ -34,7 +32,7 @@
 
 // `include "lookups.v"
 
-module stage(clk, rst, stage_num_i, data_i, data_o, busy);
+module stage(clk, rst, stage_num_i, data_i, data_o);
 
 // -------------------------
 
@@ -59,11 +57,6 @@ input   [127:0] data_i;
 */
 
 output  [127:0] data_o;
-/*
-
-*/
-
-output          busy;
 /*
 
 */
@@ -155,7 +148,6 @@ reg  [127:0] non_linear_buffer_E;
 
 assign linear_data_i        = xor_to_linear_buffer;
 assign non_linear_data_i    = linear_to_non_linear_buffer;
-assign busy                 = 1'd0;
 
 key_xor xor_stage (
     .stage_num      (stage_num_i     ),

@@ -4,30 +4,37 @@ module tb_gp();
 reg             clk;
 reg             reset;
 reg     [127:0] data_i;
-
+reg             request;
 wire    [127:0] data_o;
+wire            valid;
 wire            busy;
+
 wire    [127:0] zeros;
-reg    [127:0] encoded [10:0];
-reg [128*11-1:0] print_str;
+reg     [127:0] encoded [10:0];
+reg     [128*11-1:0] print_str;
 
 grasspopper gr (
     .clk(clk),
-    .reset(reset),
+    .rst(reset),
     .data_i(data_i),
+    .request_i(request),
+    .ack_i(1'b0),
     .data_o(data_o),
-    .busy(busy)
+    .valid_o(valid),
+    .busy_o(busy)
 );
 
 always #5 clk = ~clk;
 
 initial begin
     data_i <= 127'h0;
+    request <= 1'b0;
     clk = 0;
     reset = 1;
     @(negedge clk);
     reset = 0;
     #5
+    request <= 1'b1;
     //data_i <= 128'h1122334455667700ffeeddccbbaa9988;
         data_i <= 128'hc177d2d35af6d17477545bfcf97d43a4;
         #10;
@@ -51,6 +58,7 @@ initial begin
         #10;
         data_i <= 128'h44bf130e7bcab6a1d2d867280bb89269;
         #10;
+    request <= 1'b0;
 
     #1510;
     #10;
