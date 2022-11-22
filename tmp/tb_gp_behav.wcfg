@@ -3,296 +3,116 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_gp_behav.wdb" id="1">
+      <db_ref path="testbench_func_synth.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="tb_gp" />
+            <top_module name="testbench" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,489.486 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,763.287 ns"></ZoomEndTime>
-      <Cursor1Time time="15.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="86.801 ns"></ZoomEndTime>
+      <Cursor1Time time="26.900 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="222"></NameColumnWidth>
-      <ValueColumnWidth column_width="99"></ValueColumnWidth>
+      <ValueColumnWidth column_width="93"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="122" />
-   <wvobject fp_name="/tb_gp/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/request" type="logic">
-      <obj_property name="ElementShortName">request</obj_property>
-      <obj_property name="ObjectShortName">request</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/busy_o" type="logic">
-      <obj_property name="ElementShortName">busy_o</obj_property>
-      <obj_property name="ObjectShortName">busy_o</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/valid_o" type="logic">
-      <obj_property name="ElementShortName">valid_o</obj_property>
-      <obj_property name="ObjectShortName">valid_o</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/valid_bitmap" type="array">
-      <obj_property name="ElementShortName">valid_bitmap[159:0]</obj_property>
-      <obj_property name="ObjectShortName">valid_bitmap[159:0]</obj_property>
-   </wvobject>
+   <WVObjectSize size="56" />
    <wvobject type="divider" fp_name="divider267">
       <obj_property name="label">stage 0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/xor_stage/stage_num" type="array">
-      <obj_property name="ElementShortName">stage_num[3:0]</obj_property>
-      <obj_property name="ObjectShortName">stage_num[3:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider268">
       <obj_property name="label">xor 0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#808080</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/xor_stage/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/xor_stage/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider12">
       <obj_property name="label">sbox 0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#808080</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/linear_stage/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/linear_stage/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider14">
       <obj_property name="label">gal0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_0/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_0/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal 1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_1/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_1/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal 2</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_2/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_2/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal 3</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_3/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_3/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal 4</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_4/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_4/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal 5</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_5/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_5/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal 6</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_6/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_6/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal 7</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_7/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_7/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal 8</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_8/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_8/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal 9</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_9/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_9/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal A</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_A/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_A/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal B</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_B/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_B/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal C</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_C/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_C/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal D</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_D/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_D/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal E</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_E/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_E/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider16">
       <obj_property name="label">gal F</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#A0A0A4</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_F/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_0/non_linear_F/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider65">
       <obj_property name="label">stage 1</obj_property>
@@ -302,229 +122,143 @@
       <obj_property name="label">xor</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/xor_stage/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/xor_stage/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider72">
       <obj_property name="label">sbox</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/linear_stage/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/linear_stage/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_0/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_0/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_1/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_1/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 2</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_2/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_2/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 3</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_3/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_3/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 4</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_4/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_4/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 5</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_5/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_5/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 6</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_6/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_6/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 7</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_7/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_7/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 8</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_8/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_8/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal 9</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_9/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_9/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal A</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_A/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_A/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal B</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_B/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_B/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal C</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_C/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_C/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal D</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_D/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_D/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal E</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_E/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_E/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider73">
       <obj_property name="label">gal F</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_F/data_i" type="array">
-      <obj_property name="ElementShortName">data_i[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_i[127:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_gp/gr/stage_1/non_linear_F/data_o" type="array">
-      <obj_property name="ElementShortName">data_o[127:0]</obj_property>
-      <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider18">
       <obj_property name="label">out</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#00FFFF</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/data_o" type="array">
+   <wvobject type="divider" fp_name="divider611">
+   </wvobject>
+   <wvobject fp_name="/testbench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/data_i_IBUF" type="array">
+      <obj_property name="ElementShortName">data_i_IBUF[127:0]</obj_property>
+      <obj_property name="ObjectShortName">data_i_IBUF[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/data_o" type="array">
       <obj_property name="ElementShortName">data_o[127:0]</obj_property>
       <obj_property name="ObjectShortName">data_o[127:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_gp/busy" type="logic">
-      <obj_property name="ElementShortName">busy</obj_property>
-      <obj_property name="ObjectShortName">busy</obj_property>
+   <wvobject fp_name="/testbench/DUT/request_i" type="logic">
+      <obj_property name="ElementShortName">request_i</obj_property>
+      <obj_property name="ObjectShortName">request_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/p_0_in" type="array">
+      <obj_property name="ElementShortName">p_0_in[160:0]</obj_property>
+      <obj_property name="ObjectShortName">p_0_in[160:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/valid_o" type="logic">
+      <obj_property name="ElementShortName">valid_o</obj_property>
+      <obj_property name="ObjectShortName">valid_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/round_0_data" type="array">
+      <obj_property name="ElementShortName">round_0_data[127:0]</obj_property>
+      <obj_property name="ObjectShortName">round_0_data[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/round_1_data" type="array">
+      <obj_property name="ElementShortName">round_1_data[126:0]</obj_property>
+      <obj_property name="ObjectShortName">round_1_data[126:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/round_2_data" type="array">
+      <obj_property name="ElementShortName">round_2_data[123:0]</obj_property>
+      <obj_property name="ObjectShortName">round_2_data[123:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/round_3_data" type="array">
+      <obj_property name="ElementShortName">round_3_data[126:0]</obj_property>
+      <obj_property name="ObjectShortName">round_3_data[126:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/round_4_data" type="array">
+      <obj_property name="ElementShortName">round_4_data[125:0]</obj_property>
+      <obj_property name="ObjectShortName">round_4_data[125:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/round_5_data" type="array">
+      <obj_property name="ElementShortName">round_5_data[125:0]</obj_property>
+      <obj_property name="ObjectShortName">round_5_data[125:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/round_6_data" type="array">
+      <obj_property name="ElementShortName">round_6_data[127:0]</obj_property>
+      <obj_property name="ObjectShortName">round_6_data[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/round_7_data" type="array">
+      <obj_property name="ElementShortName">round_7_data[127:0]</obj_property>
+      <obj_property name="ObjectShortName">round_7_data[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DUT/round_8_data" type="array">
+      <obj_property name="ElementShortName">round_8_data[119:0]</obj_property>
+      <obj_property name="ObjectShortName">round_8_data[119:0]</obj_property>
    </wvobject>
 </wave_config>
