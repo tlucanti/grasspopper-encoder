@@ -69,5 +69,5 @@ def gp_encode(number):
             # d[0] = mul
         debug_print()
 
-print(f'{gp_encode(0x1122334455667700ffeeddccbbaa9988):x}')
-#print(f'{gp_encode(0x00112233445566778899AABBCCDDEEFF):x}')
+#print(f'{gp_encode(0x1122334455667700ffeeddccbbaa9988):x}')
+print(f'{gp_encode(0xc177d2d35af6d17477545bfcf97d43a4):x}')
